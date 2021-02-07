@@ -1,0 +1,27 @@
+server:
+  port: 10110
+eureka:
+  client:
+    service-url:
+      defaultZone: http://172.16.78.114:8761/eureka/
+  instance:
+    ip-address: 172.16.78.117
+    hostname: 172.16.78.117
+    instance-id: ${eureka.instance.hostname}:${server.port}
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    hikari:
+      max-lifetime: 120000
+    url: jdbc:mysql://172.16.78.114:3306/shunba?characterEncoding=UTF-8&useUnicode=true&useSSL=false&serverTimezone=GMT
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  main:
+    allow-bean-definition-overriding: true
+## 开启swagger
+shunba:
+  swagger: true

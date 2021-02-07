@@ -1,0 +1,37 @@
+server:
+  port: 10030
+eureka:
+  client:
+    service-url:
+      defaultZone: http://172.16.78.114:8761/eureka/
+  instance:
+    ip-address: 172.16.78.114
+    hostname: 172.16.78.114
+    instance-id: ${eureka.instance.hostname}:${server.port}
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/shunba?characterEncoding=UTF-8&useUnicode=true&useSSL=false&serverTimezone=GMT
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  main:
+    allow-bean-definition-overriding: true
+  redis:
+    sentinel:
+      master: mymaster
+      nodes: 127.0.0.1:6379
+    password:
+## 开启swagger
+shunba:
+  swagger: true
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder: trace

@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: socket-server
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: ALWAYS
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.mariadb.jdbc.Driver
+  messages:
+    basename: language
+server:
+  tomcat:
+    uri-encoding: UTF-8
+hibernate:
+  dialect: org.hibernate.dialect.MySQL5Dialect
+  show_sql: true
+  hbm2ddl:
+    auto: none
+  id:
+    new_generator_mappings: false
+  cache:
+    use_query_cache: true
+    use_second_level_cache: true
+    provider_class: org.hibernate.cache.EhCacheProvider
+    region:
+      factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+entitymanager:
+  packagesToScan: com.baidu.shunba
+info:
+  version: 1.0
+  buildprofile: DEV
+  name: BaiduShunbaServer
+  support: Chris
+  phone: Z0287yyy@qq.com

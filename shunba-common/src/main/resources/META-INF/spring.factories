@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.baidu.shunba.autoconfig.SwaggerConfig,\
+  com.baidu.shunba.autoconfig.JacksonSerializerDeserializerAutoConfig

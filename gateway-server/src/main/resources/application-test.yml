@@ -1,0 +1,20 @@
+server:
+  port: 8090
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://172.16.78.114:8761/eureka/
+  instance:
+    ip-address: 172.16.78.115
+    hostname: 172.16.78.115
+    instance-id: ${eureka.instance.hostname}:${server.port}
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
