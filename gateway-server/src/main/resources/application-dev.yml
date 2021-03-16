@@ -18,3 +18,4 @@ eureka:
 logging:
   level:
     org.springframework.cloud.gateway: debug
+  config: classpath:logback-spring-dev.xml

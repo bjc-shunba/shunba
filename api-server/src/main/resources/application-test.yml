@@ -40,3 +40,4 @@ logging:
           descriptor:
             sql:
               BasicBinder: trace
+  config: classpath:logback-spring-test.xml

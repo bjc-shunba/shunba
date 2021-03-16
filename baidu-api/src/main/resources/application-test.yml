@@ -25,3 +25,5 @@ spring:
 ## 开启swagger
 shunba:
   swagger: true
+logging:
+  config: classpath:logback-spring-test.xml
