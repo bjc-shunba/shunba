@@ -13,7 +13,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "t_s_log")
 public class TSLog extends IdEntity implements java.io.Serializable {
-	private TSUser TSUser;
 	private Integer loglevel;
 	private Date operatetime;
 	private Integer operatetype;
@@ -21,16 +20,6 @@ public class TSLog extends IdEntity implements java.io.Serializable {
 	private String logcontent;
 	private String broswer;//用户浏览器类型
 	private String note;
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "userid")
-	public TSUser getTSUser() {
-		return this.TSUser;
-	}
-
-	public void setTSUser(TSUser TSUser) {
-		this.TSUser = TSUser;
-	}
 
 	@Column(name = "loglevel")
 	public Integer getLoglevel() {

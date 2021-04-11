@@ -8,7 +8,6 @@ import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import com.baidu.shunba.core.entity.TSRoleFunction;
 
 
 /**
@@ -29,20 +28,7 @@ public class ResourceUtil {
 		return bundle.getString(sessionName);
 	}
 	
-	@Deprecated
-	public static final List<TSRoleFunction> getSessionTSRoleFunction(String roleId) {
-		HttpSession session = ContextHolderUtils.getSession();
-		if (session.getAttributeNames().hasMoreElements()) {
-			List<TSRoleFunction> TSRoleFunctionList = (List<TSRoleFunction>)session.getAttribute(roleId);
-			if (TSRoleFunctionList != null) {
-				return TSRoleFunctionList;
-			} else {
-				return null;
-			}
-		} else {
-			return null;
-		}
-	}
+
 	
 	/**
 	 * 获得请求路径
